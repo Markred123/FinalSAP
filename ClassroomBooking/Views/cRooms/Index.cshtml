@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ClassroomBooking.Models.cRoom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Bookings:</h2>
+
+<p>
+    @Html.ActionLink("Book new room", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Room name:
+        </th>
+        <th>
+            Student name:
+        </th>
+        <th>
+            E-mail
+        </th>
+        <th>
+            Mobile
+        </th>
+        <th>
+            Date from:
+        </th>
+        <th>
+            Date to:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.roomName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cRoomDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cRoomDateTo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cRoomID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cRoomID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cRoomID })
+        </td>
+    </tr>
+}
+
+</table>

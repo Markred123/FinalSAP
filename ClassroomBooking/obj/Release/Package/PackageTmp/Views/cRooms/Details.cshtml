@@ -1,0 +1,66 @@
+﻿@model ClassroomBooking.Models.cRoom
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>cRoom</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Room name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roomName)
+        </dd>
+
+        <dt>
+            Student name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentName)
+        </dd>
+
+        <dt>
+            E-mail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentEmail)
+        </dd>
+
+        <dt>
+            Mobile:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentPhone)
+        </dd>
+
+        <dt>
+            Date from:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cRoomDate)
+        </dd>
+
+        <dt>
+            Date to:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cRoomDateTo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.cRoomID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

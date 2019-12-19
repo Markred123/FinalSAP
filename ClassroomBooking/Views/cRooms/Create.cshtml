@@ -1,0 +1,91 @@
+﻿@model ClassroomBooking.Models.cRoom
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Book</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="col-md-10">
+            <h4>Room Name:</h4>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.roomName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.roomName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <h4>Student Name:</h4>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.studentName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.studentName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <h4>Student E-mail:</h4>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.studentEmail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.studentEmail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <h4>Student Phone:</h4>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.studentPhone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.studentPhone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <h4>Date and time from: Please insert in the format MM/DD/YYYY HH:MM:SS</h4>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.cRoomDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.cRoomDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <h4>Date and time to: MM/DD/YYYY HH:MM:SS</h4>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.cRoomDateTo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.cRoomDateTo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
